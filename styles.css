@@ -20,4 +20,133 @@ body {
 
 img {
     display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/*Profile Section*/
+/*Create a flexbox layout*/
+.profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.profile-image img {
+    border: 8px solid rgb(76, 106, 76);
+    border-radius: 50%;
+}
+
+.profile-user-name {
+    display: inline-block;
+    margin-left: 25px;
+    position: relative;
+}
+
+ul {
+    position: absolute;
+    top: 16%;
+    left: 50%;
+    font-size: 15px;
+}
+
+ul li {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.profile-stat-count {
+    display: inline-block;
+    margin-top: 55px;
+}
+
+.profile-bio {
+    position: absolute;
+    top: 20%;
+    left: 51%;
+    font-size: 15px;
+    margin-top: 60px;
+}
+
+.profile-edit-btn {
+    background-color: white;
+    border: 1px solid lightgrey;
+}
+
+.profile-settings-btn {
+    border: none;
+}
+
+/*Gallery Section*/
+/*Create a grid layout*/
+.gallery {
+    height: 100%;
+    width: 50%;
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gallery-item {
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+}
+
+.visually-hidden {
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: 0.5s ease; 
+}
+
+.gallery-item-info {
+    opacity: 0;
+    transition: 0.5s ease;
+}
+
+.gallery-item:hover {
+    cursor: pointer;
+    opacity: 1;
+    transition: 0.5s ease;
+    filter: brightness(50%)
+}
+
+.gallery-item-info:hover {
+    opacity: 1;
+    transition: 0.5s ease;
+}
+
+/*Create loader wheel*/
+.loader {
+    border: 10px solid rgb(76, 106, 76);
+    border-radius: 50%;
+    border-top: 10px solid white;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    width: 50px;
+    height: 50px;
+    animation: loader-wheel 1s linear infinite;
+  }
+
+@keyframes loader-wheel {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Adding media queries */
+@media all and (max-width: 400px) {
+    .container {
+        flex-wrap: wrap;
+    }
 }
